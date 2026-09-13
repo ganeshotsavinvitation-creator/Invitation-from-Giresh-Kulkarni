@@ -1,12 +1,5 @@
-# Giresh Vasudev Kulkarni & Family — Ganpati Invitation
+# Giresh Vasudev Kulkarni & Family — Fresh Ganpati Invitation
 
-Mobile-first Royal & Premium Ganpati digital invitation.
+A fresh Royal & Premium mobile-first invitation.
 
-## Files
-- `index.html`
-- `ganpati.jpg`
-- `ganesh-mantra.mp3`
-
-## GitHub Pages
-Upload all three files to the root of a GitHub repository, then enable:
-Settings → Pages → Deploy from a branch → main → /(root).
+Upload `index.html`, `ganpati.jpg`, and `ganesh-mantra.mp3` to the root of a GitHub repository and enable GitHub Pages from the `main` branch.

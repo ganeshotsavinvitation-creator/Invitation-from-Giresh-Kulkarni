@@ -3,139 +3,103 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#080604">
-<title>Ganpati Bappa Morya | Giresh Vasudev Kulkarni & Family</title>
+<meta name="theme-color" content="#090604">
+<title>Ganpati Bappa | Giresh Vasudev Kulkarni & Family</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap');
-:root{--gold:#e7bf68;--gold2:#fff0bd;--ink:#080604;--cream:#f8eed5}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:#050403;color:var(--cream);font-family:Inter,system-ui,sans-serif;overflow-x:hidden}
-button{font:inherit}
-.cover{min-height:100svh;position:relative;display:grid;place-items:center;overflow:hidden;background:
- radial-gradient(circle at 50% 35%,rgba(220,170,60,.15),transparent 38%),
- linear-gradient(180deg,#17100a 0%,#070504 65%,#030303 100%)}
-.cover:before,.cover:after{content:"";position:absolute;inset:0;pointer-events:none}
-.cover:before{background:radial-gradient(circle,rgba(255,215,120,.8) 0 1px,transparent 1.5px);background-size:72px 72px;opacity:.13;animation:drift 18s linear infinite}
-.cover:after{background:linear-gradient(90deg,transparent,rgba(255,220,140,.08),transparent);transform:translateX(-100%);animation:sweep 7s ease-in-out infinite}
-.door{position:absolute;inset:0;display:grid;grid-template-columns:1fr 1fr;z-index:2;pointer-events:none}
-.door span{background:linear-gradient(90deg,#160e08,#3b2813 48%,#110a06);border:1px solid rgba(231,191,104,.22);box-shadow:inset 0 0 80px #000}
-.door span:first-child{border-right:2px solid rgba(231,191,104,.5)}
-.door span:last-child{border-left:2px solid rgba(231,191,104,.5)}
-.cover.open .door span:first-child{animation:leftDoor 1.5s cubic-bezier(.8,0,.2,1) forwards}
-.cover.open .door span:last-child{animation:rightDoor 1.5s cubic-bezier(.8,0,.2,1) forwards}
-.cover.open .door{pointer-events:none}.cover.open{animation:coverFade .45s ease 1.35s forwards}
-.hero{position:relative;z-index:4;width:min(92vw,470px);text-align:center;padding:32px 20px}
-.sanskrit{letter-spacing:.24em;color:var(--gold2);font-size:12px;text-transform:uppercase;margin-bottom:16px}
-.cover:not(.open) .hero .sanskrit,.cover:not(.open) .hero h1,.cover:not(.open) .hero .family,.cover:not(.open) .hero .sub,.cover:not(.open) .hero .scroll{opacity:0}.cover.open .hero .sanskrit,.cover.open .hero h1,.cover.open .hero .family,.cover.open .hero .sub,.cover.open .hero .scroll{transition:opacity 1s ease 1s;opacity:1}.hero h1{font-family:"Cormorant Garamond",serif;font-size:clamp(42px,13vw,74px);line-height:.9;margin:0;color:#fff1c6;text-shadow:0 5px 30px #000}
-.hero .family{font-family:"Cormorant Garamond",serif;font-size:28px;margin:18px 0 6px;color:var(--gold)}
-.hero .sub{font-size:12px;letter-spacing:.16em;color:#d7c59c}
-.openBtn{position:relative;z-index:6;margin-top:30px;border:1px solid rgba(231,191,104,.8);border-radius:999px;padding:15px 25px;background:linear-gradient(180deg,#d9ae51,#9b6a22);color:#1a1005;font-weight:700;box-shadow:0 0 35px rgba(231,191,104,.2);cursor:pointer}
-.scroll{margin-top:24px;color:#fff4cf;font-size:14px;opacity:.9;animation:pulse 2s ease-in-out infinite}
-.music{position:fixed;top:16px;right:16px;z-index:20;width:46px;height:46px;border-radius:50%;border:1px solid rgba(231,191,104,.6);background:rgba(12,8,5,.82);color:var(--gold2);display:none;place-items:center;backdrop-filter:blur(8px);box-shadow:0 8px 30px #000}
-.music.show{display:grid}
-main{display:none;background:linear-gradient(#080604,#120b06 48%,#050403)}
-main.show{display:block}
-.section{width:min(94vw,560px);margin:auto;padding:62px 18px}
-.photo-wrap{position:relative;border-radius:24px;padding:1px;background:linear-gradient(135deg,#fff1ba,#8c5c20,#f5d982);box-shadow:0 25px 80px rgba(0,0,0,.7)}
-.photo-wrap img{display:block;width:100%;border-radius:23px;max-height:72svh;object-fit:cover}
-.glow{position:absolute;inset:-15%;z-index:-1;background:radial-gradient(circle,rgba(231,191,104,.17),transparent 60%);filter:blur(20px)}
-.mantra{text-align:center;margin:34px 0 8px;color:var(--gold2);font-family:"Cormorant Garamond",serif;font-size:25px}
-.intro{text-align:center;color:#d8c9aa;line-height:1.8;font-size:14px}
-.divider{width:100px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:30px auto}
-.events{display:grid;gap:16px}
-.card{position:relative;padding:24px 20px;border:1px solid rgba(231,191,104,.25);border-radius:20px;background:linear-gradient(145deg,rgba(255,220,150,.07),rgba(255,255,255,.02));box-shadow:0 16px 45px rgba(0,0,0,.35);overflow:hidden}
-.card:before{content:"";position:absolute;top:0;left:0;width:55px;height:2px;background:var(--gold)}
-.label{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#b99a62}
-.card h3{font-family:"Cormorant Garamond",serif;font-size:28px;margin:7px 0;color:#fff0c4}
-.card p{margin:0;color:#d8c9aa;line-height:1.65;font-size:13px}
-.time{color:var(--gold);font-weight:600;margin-top:8px!important}
-.location{margin-top:28px;padding:22px;border-radius:20px;text-align:center;border:1px solid rgba(231,191,104,.3);background:rgba(231,191,104,.05)}
-.location strong{display:block;font-family:"Cormorant Garamond",serif;font-size:26px;color:#fff0c4;margin:6px 0}
-.map{display:inline-block;margin-top:16px;text-decoration:none;color:#1b1005;background:linear-gradient(180deg,#f2d17d,#a97629);padding:13px 20px;border-radius:999px;font-weight:700}
-.share{display:block;width:100%;margin-top:14px;border:1px solid rgba(231,191,104,.4);background:transparent;color:var(--gold2);padding:13px;border-radius:999px;cursor:pointer}
-.footer{text-align:center;padding:20px 18px 55px;color:#9f8c69;font-size:11px;letter-spacing:.08em}
-.reveal{opacity:0;transform:translateY(25px);transition:1s ease}
-.reveal.on{opacity:1;transform:none}
-@keyframes leftDoor{to{transform:translateX(-100%)}}
-@keyframes rightDoor{to{transform:translateX(100%)}}
-@keyframes drift{to{background-position:0 72px}}
-@keyframes sweep{50%{transform:translateX(100%)}100%{transform:translateX(100%)}}
-@keyframes pulse{50%{transform:translateY(5px);opacity:.55}}@keyframes coverFade{to{opacity:0;visibility:hidden;pointer-events:none}}
-@media(min-width:700px){.section{padding-top:90px}.photo-wrap img{max-height:760px}}
+:root{--gold:#e6bd68;--pale:#fff1c9;--bg:#070504;--line:rgba(230,189,104,.28)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:#fff1d0;font-family:Inter,system-ui,sans-serif}
+#intro{min-height:100svh;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at 50% 44%,rgba(181,126,38,.18),transparent 34%),linear-gradient(180deg,#120b06,#040302)}
+#intro:before{content:"";position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,219,139,.75) 0 1px,transparent 1.5px);background-size:83px 83px;opacity:.14;animation:stars 15s linear infinite}
+.frame{position:absolute;inset:18px;border:1px solid rgba(230,189,104,.4);pointer-events:none}.frame:before,.frame:after{content:"";position:absolute;width:55px;height:55px;border-color:var(--gold);border-style:solid}.frame:before{left:-1px;top:-1px;border-width:2px 0 0 2px}.frame:after{right:-1px;bottom:-1px;border-width:0 2px 2px 0}
+.panel{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:4;transition:transform 1.5s cubic-bezier(.8,0,.2,1)}
+.panel.left{clip-path:polygon(0 0,50% 0,50% 100%,0 100%);background:linear-gradient(90deg,#120b06,#35230f 60%,#1a1008)}
+.panel.right{clip-path:polygon(50% 0,100% 0,100% 100%,50% 100%);background:linear-gradient(90deg,#1a1008,#35230f 40%,#120b06)}
+.panel:after{content:"";position:absolute;top:10%;bottom:10%;width:75%;border:1px solid rgba(230,189,104,.23);box-shadow:inset 0 0 55px rgba(0,0,0,.6)}
+.open .panel.left{transform:translateX(-100%)}.open .panel.right{transform:translateX(100%)}
+.center{position:relative;z-index:5;text-align:center;width:min(92vw,520px);padding:25px}
+.mantra{font-family:"Cormorant Garamond",serif;font-size:17px;letter-spacing:.14em;color:var(--pale);margin-bottom:22px}
+.ganesha{font-family:"Cormorant Garamond",serif;font-size:clamp(42px,13vw,70px);line-height:.82;margin:0;color:var(--pale);text-shadow:0 8px 35px #000}
+.family{font-family:"Cormorant Garamond",serif;font-size:25px;color:var(--gold);margin:25px 0 7px}
+.kicker{font-size:10px;letter-spacing:.18em;color:#d7c7a7;line-height:1.7}
+.openBtn{margin-top:29px;border:1px solid #f3d98d;background:linear-gradient(135deg,#f0cf79,#a86e1e);border-radius:999px;padding:16px 28px;color:#1b1005;font-weight:700;letter-spacing:.05em;box-shadow:0 0 35px rgba(230,189,104,.22);cursor:pointer}
+.hint{margin-top:18px;font-size:12px;color:#fff1c9;opacity:.82;animation:breathe 2s ease-in-out infinite}
+#site{display:none}.show{display:block!important}
+.music{position:fixed;right:15px;top:15px;z-index:20;width:46px;height:46px;border-radius:50%;background:rgba(12,8,5,.88);border:1px solid var(--line);color:var(--gold);font-size:20px;display:grid;place-items:center;backdrop-filter:blur(8px)}
+.hero{padding:34px 18px 20px;text-align:center;width:min(94vw,600px);margin:auto}
+.heroimg{position:relative;border-radius:28px;padding:1px;background:linear-gradient(145deg,#f6dd98,#6e4718,#e9c773);box-shadow:0 25px 80px #000}
+.heroimg img{width:100%;display:block;border-radius:27px;max-height:70svh;object-fit:cover}
+.title{font-family:"Cormorant Garamond",serif;font-size:39px;margin:25px 0 5px;color:var(--pale)}
+.titleSmall{font-family:"Cormorant Garamond",serif;font-size:22px;color:var(--gold)}.familyPost{font-family:"Cormorant Garamond",serif;font-size:25px;line-height:1.2;color:var(--gold);margin:5px 10px 8px}
+.afterOpenHint{text-align:center;color:#fff1c9;font-size:13px;letter-spacing:.12em;margin:12px 0 8px;opacity:.85;animation:breathe 2s ease-in-out infinite}.copy{text-align:center;color:#d9c9a9;font-size:13px;line-height:1.8;margin:14px auto 0;max-width:500px}
+.orn{height:1px;width:120px;margin:25px auto;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.events{width:min(94vw,600px);margin:auto;padding:8px 18px 25px;display:grid;gap:14px}
+.event{display:flex;align-items:center;gap:15px;padding:18px;border:1px solid var(--line);border-radius:20px;background:linear-gradient(135deg,rgba(230,189,104,.07),rgba(255,255,255,.015));box-shadow:0 14px 40px rgba(0,0,0,.3)}
+.num{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;border:1px solid var(--gold);color:var(--gold);font-family:"Cormorant Garamond",serif;font-size:21px;flex:none}
+.event h3{margin:0 0 4px;font-family:"Cormorant Garamond",serif;font-size:24px;color:var(--pale)}.event p{margin:0;color:#cfc09f;font-size:12px;line-height:1.5}.event .time{color:var(--gold);font-weight:600;margin-top:3px}
+.location{width:min(94vw,600px);margin:8px auto 0;padding:25px 20px;text-align:center;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.location h2{font-family:"Cormorant Garamond",serif;font-size:29px;color:var(--pale);margin:0 0 7px}.location p{color:#d2c09c;font-size:13px;line-height:1.7;margin:0}
+.map,.share{display:inline-block;margin-top:17px;border-radius:999px;padding:13px 21px;text-decoration:none;font-weight:700}
+.map{background:linear-gradient(135deg,#f1d487,#a56d1d);color:#1b1005}.share{background:transparent;border:1px solid var(--gold);color:var(--pale);cursor:pointer}
+.footer{text-align:center;padding:35px 18px 55px;color:#9c8966;font-size:11px}
+.reveal{opacity:0;transform:translateY(22px);transition:900ms ease}.reveal.on{opacity:1;transform:none}
+@keyframes stars{to{background-position:0 83px}}@keyframes breathe{50%{opacity:.45;transform:translateY(4px)}}
 </style>
 </head>
 <body>
-<section class="cover" id="cover">
-  <div class="door"><span></span><span></span></div>
-  <div class="hero">
-    <div class="sanskrit">॥ श्री गणेशाय नमः ॥</div>
-    <h1>गणपती बाप्पा<br>मोरया</h1>
+<section id="intro">
+  <div class="frame"></div>
+  <div class="panel left"></div><div class="panel right"></div>
+  <div class="center">
+    <div class="mantra">॥ श्री गणेशाय नमः ॥</div>
+    <h1 class="ganesha">गणपती बाप्पा<br>मोरया</h1>
     <div class="family">Giresh Vasudev Kulkarni &amp; Family</div>
-    <div class="sub">CORDIALLY INVITE YOU TO WELCOME GANPATI BAPPA</div>
+    <div class="kicker">A DIVINE WELCOME • A JOYFUL CELEBRATION</div>
     <button class="openBtn" id="open">OPEN THE DOORS 🙏</button>
-    <div class="scroll">SCROLL DOWN ↓</div>
+    
   </div>
 </section>
 
 <button class="music" id="music" aria-label="Music">♫</button>
 <audio id="audio" src="ganesh-mantra.mp3" loop preload="auto"></audio>
 
-<main id="main">
-  <section class="section">
-    <div class="photo-wrap reveal">
-      <div class="glow"></div>
-      <img src="ganpati.jpg" alt="Ganpati Bappa">
-    </div>
-    <div class="mantra reveal">गणाधिपतये नमः 🙏</div>
-    <p class="intro reveal">With devotion in our hearts and joy in our home, we invite you to welcome Lord Ganesha and seek His divine blessings.</p>
-    <div class="divider"></div>
-
-    <div class="events">
-      <article class="card reveal">
-        <div class="label">Ganpati Arrival</div>
-        <h3>GANPATI ARRIVAL</h3>
-        <p>Monday, 14 September 2026</p>
-      </article>
-      <article class="card reveal">
-        <div class="label">Evening Aarti</div>
-        <h3>EVENING AARTI</h3>
-        <p class="time">7:30 PM</p>
-      </article>
-      <article class="card reveal">
-        <div class="label">Visarjan</div>
-        <h3>GANPATI VISARJAN</h3>
-        <p>Friday, 18 September 2026</p>
-      </article>
-    </div>
-
-    <div class="location reveal">
-      <div class="label">Our Home</div>
-      <strong>BF1, Mayflower Enclave</strong>
-      <p>Near Poddar School, Old Goa</p>
-      <a class="map" href="https://maps.app.goo.gl/57yovd4iSGqS81Yw5?g_st=ac" target="_blank" rel="noopener">📍 View Exact Location</a>
-      <button class="share" id="share">↗ Share Invitation</button>
-    </div>
+<main id="site">
+  <section class="hero">
+    <div class="heroimg reveal"><img src="ganpati.jpg" alt="Ganpati Bappa"></div>
+    <div class="title reveal">गणपती बाप्पा मोरया</div><div class="familyPost reveal">Giresh Vasudev Kulkarni &amp; Family</div>
+    <div class="titleSmall reveal">॥ श्री गणेशाय नमः ॥</div><div class="afterOpenHint reveal">SCROLL DOWN ↓</div>
+    <p class="copy reveal">With devotion in our hearts, Giresh Vasudev Kulkarni &amp; Family warmly invite you to welcome Ganesha and seek His divine blessings.</p>
+    <div class="orn"></div>
   </section>
-  <div class="footer">॥ श्री गणेशाय नमः ॥ • GANPATI BAPPA MORYA</div>
+
+  <section class="events">
+    <article class="event reveal"><div class="num">01</div><div><h3>Ganpati Arrival</h3><p>Monday • 14 September 2026</p></div></article>
+    <article class="event reveal"><div class="num">02</div><div><h3>Evening Aarti</h3><p class="time">7:30 PM</p></div></article>
+    <article class="event reveal"><div class="num">03</div><div><h3>Ganpati Visarjan</h3><p>Friday • 18 September 2026</p></div></article>
+  </section>
+
+  <section class="location reveal">
+    <h2>Our Home</h2>
+    <p>BF1, Mayflower Enclave<br>Near Poddar School, Old Goa</p>
+    <a class="map" href="https://maps.app.goo.gl/57yovd4iSGqS81Yw5?g_st=ac" target="_blank" rel="noopener">📍 VIEW LOCATION ON MAP</a>
+    <br><button class="share" id="share">↗ SHARE INVITATION</button>
+  </section>
+
+  <div class="footer">॥ श्री गणेशाय नमः ॥<br><br>GANPATI BAPPA MORYA</div>
 </main>
 
 <script>
-const cover=document.getElementById('cover'), main=document.getElementById('main'), openBtn=document.getElementById('open');
-const audio=document.getElementById('audio'), music=document.getElementById('music');
-openBtn.addEventListener('click',()=>{
-  cover.classList.add('open'); openBtn.style.opacity='0'; openBtn.style.pointerEvents='none'; openBtn.style.transition='opacity .5s ease';
-  setTimeout(()=>{main.classList.add('show'); music.classList.add('show'); main.scrollIntoView({behavior:'smooth'});},650);
-  audio.play().then(()=>music.textContent='♫').catch(()=>{});
+const intro=document.getElementById('intro'),site=document.getElementById('site'),open=document.getElementById('open'),audio=document.getElementById('audio'),music=document.getElementById('music');
+open.addEventListener('click',()=>{
+  intro.classList.add('open');
+  audio.play().catch(()=>{});
+  music.classList.add('show');
+  setTimeout(()=>{intro.style.display='none';site.classList.add('show');window.scrollTo(0,0);document.querySelectorAll('.reveal').forEach((x,i)=>setTimeout(()=>x.classList.add('on'),i*120));},1550);
 });
-music.addEventListener('click',()=>{
-  if(audio.paused){audio.play();music.textContent='♫'}else{audio.pause();music.textContent='🔇'}
-});
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('on')}),{threshold:.12});
-document.querySelectorAll('.reveal').forEach(x=>io.observe(x));
+music.addEventListener('click',()=>{if(audio.paused){audio.play();music.textContent='♫'}else{audio.pause();music.textContent='🔇'}});
 document.getElementById('share').addEventListener('click',async()=>{
-  if(navigator.share){try{await navigator.share({title:'Ganpati Bappa | Giresh Vasudev Kulkarni & Family',text:'You are invited to welcome Ganpati Bappa 🙏'});}catch(e){}}
-  else {await navigator.clipboard?.writeText(location.href);alert('Invitation link copied!');}
+  if(navigator.share){try{await navigator.share({title:'Ganpati Bappa | Giresh Vasudev Kulkarni & Family',text:'You are invited to welcome Ganpati Bappa 🙏',url:location.href})}catch(e){}}
+  else {try{await navigator.clipboard.writeText(location.href);alert('Invitation link copied!')}catch(e){}}
 });
 </script>
 </body>
